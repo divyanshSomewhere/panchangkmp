@@ -1,12 +1,12 @@
-package com.jetbrains.kmpapp.di
+package com.gometro.kmpapp.di
 
-import com.jetbrains.kmpapp.data.InMemoryMuseumStorage
-import com.jetbrains.kmpapp.data.KtorMuseumApi
-import com.jetbrains.kmpapp.data.MuseumApi
-import com.jetbrains.kmpapp.data.MuseumRepository
-import com.jetbrains.kmpapp.data.MuseumStorage
-import com.jetbrains.kmpapp.screens.detail.DetailViewModel
-import com.jetbrains.kmpapp.screens.list.ListViewModel
+import com.gometro.kmpapp.data.InMemoryMuseumStorage
+import com.gometro.kmpapp.data.KtorMuseumApi
+import com.gometro.kmpapp.data.MuseumApi
+import com.gometro.kmpapp.data.MuseumRepository
+import com.gometro.kmpapp.data.MuseumStorage
+import com.gometro.kmpapp.screens.detail.DetailViewModel
+import com.gometro.kmpapp.screens.list.ListViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.http.ContentType

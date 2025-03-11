@@ -1,4 +1,4 @@
-package com.jetbrains.kmpapp.screens.detail
+package com.gometro.kmpapp.screens.detail
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.background
@@ -35,18 +35,18 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
-import com.jetbrains.kmpapp.data.MuseumObject
-import com.jetbrains.kmpapp.screens.EmptyScreenContent
-import kmp_app_template.composeapp.generated.resources.Res
-import kmp_app_template.composeapp.generated.resources.back
-import kmp_app_template.composeapp.generated.resources.label_artist
-import kmp_app_template.composeapp.generated.resources.label_credits
-import kmp_app_template.composeapp.generated.resources.label_date
-import kmp_app_template.composeapp.generated.resources.label_department
-import kmp_app_template.composeapp.generated.resources.label_dimensions
-import kmp_app_template.composeapp.generated.resources.label_medium
-import kmp_app_template.composeapp.generated.resources.label_repository
-import kmp_app_template.composeapp.generated.resources.label_title
+import com.gometro.kmpapp.data.MuseumObject
+import com.gometro.kmpapp.screens.EmptyScreenContent
+import gometro.composeapp.generated.resources.Res
+import gometro.composeapp.generated.resources.back
+import gometro.composeapp.generated.resources.label_artist
+import gometro.composeapp.generated.resources.label_credits
+import gometro.composeapp.generated.resources.label_date
+import gometro.composeapp.generated.resources.label_department
+import gometro.composeapp.generated.resources.label_dimensions
+import gometro.composeapp.generated.resources.label_medium
+import gometro.composeapp.generated.resources.label_repository
+import gometro.composeapp.generated.resources.label_title
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 

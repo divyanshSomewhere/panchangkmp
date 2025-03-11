@@ -1,4 +1,4 @@
-package com.jetbrains.kmpapp.data
+package com.gometro.kmpapp.data
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body

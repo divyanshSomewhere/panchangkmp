@@ -1,4 +1,4 @@
-package com.jetbrains.kmpapp.data
+package com.gometro.kmpapp.data
 
 import kotlinx.serialization.Serializable
 

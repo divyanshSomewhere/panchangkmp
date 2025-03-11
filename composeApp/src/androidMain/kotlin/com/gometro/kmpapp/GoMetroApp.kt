@@ -1,9 +1,9 @@
-package com.jetbrains.kmpapp
+package com.gometro.kmpapp
 
 import android.app.Application
-import com.jetbrains.kmpapp.di.initKoin
+import com.gometro.kmpapp.di.initKoin
 
-class MuseumApp : Application() {
+class GoMetroApp : Application() {
     override fun onCreate() {
         super.onCreate()
         initKoin()

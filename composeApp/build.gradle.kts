@@ -59,13 +59,13 @@ kotlin {
 }
 
 android {
-    namespace = "com.jetbrains.kmpapp"
-    compileSdk = 35
+    namespace = "com.gometro.kmpapp"
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.jetbrains.kmpapp"
-        minSdk = 24
-        targetSdk = 35
+        applicationId = "com.gometro.kmpapp"
+        minSdk = libs.versions.android.minSdk.get().toInt()
+        targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
     }
@@ -83,8 +83,25 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    externalNativeBuild {
+        cmake {
+            path = file("src/androidMain/cpp/CMakeLists.txt")
+            version = "3.22.1"
+        }
+    }
+    sourceSets.getByName("main") {
+        jniLibs.srcDirs("libs")
+    }
+    ndkVersion = "21.1.6352462"
 }
 
 dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
+    // This is not a recommended way
+    // https://kotlinlang.org/docs/multiplatform-android-dependencies.html
+    dependencies {
+        debugImplementation(libs.chucker.debug)
+        releaseImplementation(libs.chucker.release)
+    }
 }

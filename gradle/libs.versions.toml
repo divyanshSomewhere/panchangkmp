@@ -3,7 +3,7 @@ android-targetSdk = "34"
 android-compileSdk = "34"
 android-minSdk = "22"
 
-agp = "8.6.1"
+agp = "8.8.1"
 androidx-activityCompose = "1.9.3"
 androidx-ui-tooling = "1.7.4"
 coil = "3.0.0"
@@ -13,37 +13,81 @@ kotlin = "2.0.21"
 ktor = "3.0.0"
 navigationCompose = "2.8.0-alpha10"
 coreKtx = "1.15.0"
-junit = "4.13.2"
-junitVersion = "1.2.1"
+#junit = "4.13.2"
+#junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
+compose-compiler = "1.5.4"
+
+precompose = "1.6.0"
+firebase-bom = "33.0.0"
+firebase-crashlytics-plugin = "3.0.1"
+crashkios = "0.8.6"
+
+kotlinStdlib = "2.0.21"
+#kotlinTest = "2.0.21"
+runner = "1.5.2"
+core = "1.5.0"
 
 chucker = "3.5.2"
+skie = "0.9.3"
+splash-api = "1.0.1"
+sql-delight = "2.0.2"
+data-store = "1.1.1"
+
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
-androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "androidx-ui-tooling" }
-androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "androidx-ui-tooling" }
+#androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "androidx-ui-tooling" }
+#androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "androidx-ui-tooling" }
 coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
 coil-network-ktor = { group = "io.coil-kt.coil3", name = "coil-network-ktor3", version.ref = "coil" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" }
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
+
+
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-client-logging = {module = "io.ktor:ktor-client-logging", version.ref = "ktor"}
+
 navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+#androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+#junit = { group = "junit", name = "junit", version.ref = "junit" }
+#androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+#androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+#androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+#material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 chucker-debug = { group = "com.github.chuckerteam.chucker", name = "library", version.ref = "chucker" }
 chucker-release = { group = "com.github.chuckerteam.chucker", name = "library-no-op", version.ref = "chucker" }
+#kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinStdlib" }
+#kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlinTest" }
+#androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
+#androidx-core = { group = "androidx.test", name = "core", version.ref = "core" }
+
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
+crashkios = { group = "co.touchlab.crashkios", name = "crashlytics", version.ref = "crashkios" }
+
+skie-config-annotation = { group = "co.touchlab.skie", name = "configuration-annotations", version.ref = "skie" }
+precompose-core = { group = "moe.tlaster", name = "precompose", version.ref = "precompose" }
+precompose-viewmodel = { group = "moe.tlaster", name = "precompose-viewmodel", version.ref = "precompose" }
+precompose-koin = { group = "moe.tlaster", name = "precompose-koin", version.ref = "precompose" }
+android-splash-api = { group = "androidx.core", name = "core-splashscreen", version.ref = "splash-api" }
+
+sql-delight-android-driver = { group = "app.cash.sqldelight", name = "android-driver", version.ref = "sql-delight" }
+sql-delight-native-driver = { group = "app.cash.sqldelight", name = "native-driver", version.ref = "sql-delight" }
+sql-delight-coroutines = { group = "app.cash.sqldelight", name = "coroutines-extensions", version.ref = "sql-delight" }
+sql-delight-primitive-adapter = { group = "app.cash.sqldelight", name = "primitive-adapters", version.ref = "sql-delight" }
+
+data-store-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "data-store" }
+data-store-prefs = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "data-store" }
 
 
 [plugins]
@@ -53,3 +97,13 @@ composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-mu
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidKotlinMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+#firebaseCrashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebase-crashlytics-plugin" }
+skie = { id = "co.touchlab.skie", version.ref = "skie" }
+sqlDelight = { id = "app.cash.sqldelight", version.ref = "sql-delight" }
+
+[bundles]
+precompose = ["precompose-core", "precompose-viewmodel", "precompose-koin"]
+data-store = ["data-store-core", "data-store-prefs"]
+
+

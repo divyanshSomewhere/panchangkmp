@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
 import com.gometro.core.di.KoinHelper
 import com.gometro.core.init.ApplicationInitManager
-import com.gometro.kmpapp.di.initKoin
 import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
 

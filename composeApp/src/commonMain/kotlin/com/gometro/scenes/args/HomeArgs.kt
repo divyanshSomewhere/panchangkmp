@@ -1,6 +1,6 @@
 package com.gometro.scenes.args
 
-import com.gometro.scenes.GometroScenes
+import com.gometro.scenes.AppScenes
 import kotlinx.serialization.Serializable
 
 /**
@@ -10,5 +10,5 @@ import kotlinx.serialization.Serializable
 data class HomeArgs(
     val destinationTabTypeString: String? = null
 ) : SceneArgs() {
-    override fun resolveScene() = GometroScenes.Home
+    override fun resolveScene() = AppScenes.Home
 }

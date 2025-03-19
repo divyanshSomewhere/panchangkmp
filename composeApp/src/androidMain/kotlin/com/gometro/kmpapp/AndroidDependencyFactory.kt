@@ -4,12 +4,11 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.os.Build
 import com.gometro.buildconfig.Environment
-import com.gometro.buildconfig.GometroBuildConfig
+import com.gometro.buildconfig.AppBuildConfig
 import com.gometro.buildconfig.Platform
-import com.gometro.buildconfig.ProductFlavor
 import com.gometro.core.di.PlatformDependencyFactory
 import com.gometro.core.di.PlatformDependencyRequest
-import com.gometro.foreground.ApplicationForegroundManagerAndroid
+import com.gometro.core.androidutils.foreground.ApplicationForegroundManagerAndroid
 import com.gometro.network.KConnectivityManager
 import com.gometro.network.KConnectivityManagerAndroid
 import org.koin.core.component.KoinComponent
@@ -18,8 +17,8 @@ class AndroidDependencyFactory (
     private val context: Context
 ): PlatformDependencyFactory, KoinComponent {
 
-    private val gometroBuildConfig by lazy {
-        object : GometroBuildConfig {
+    private val appBuildConfig by lazy {
+        object : AppBuildConfig {
             override val environment: Environment = BuildConfig.ENVIRONMENT
             override val platform: Platform = Platform.ANDROID
             override val versionCode: Int = BuildConfig.VERSION_CODE
@@ -44,7 +43,7 @@ class AndroidDependencyFactory (
 
     override fun <T> create(request: PlatformDependencyRequest<T>): T {
         return when(request) {
-            PlatformDependencyRequest.BuildInfo -> gometroBuildConfig as T
+            PlatformDependencyRequest.BuildInfo -> appBuildConfig as T
             PlatformDependencyRequest.ConnectivityManagerRequest -> connectivityManager as T
             PlatformDependencyRequest.ForegroundManager -> applicationForegroundManager as T
         }

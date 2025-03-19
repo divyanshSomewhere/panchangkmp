@@ -95,6 +95,8 @@ kotlin {
 
 //            implementation(libs.bundles.precompose)
             implementation(libs.koin.compose)
+
+            implementation(libs.bundles.android.sms.retriever)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
@@ -130,6 +132,7 @@ kotlin {
             implementation(libs.sql.delight.coroutines)
             implementation(libs.sql.delight.primitive.adapter)
             implementation(libs.bundles.data.store)
+            implementation(libs.kotlinx.datetime)
 
             api(libs.crashkios)
         }

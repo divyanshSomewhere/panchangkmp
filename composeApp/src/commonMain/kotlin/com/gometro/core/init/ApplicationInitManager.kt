@@ -1,11 +1,11 @@
 package com.gometro.core.init
 
-import com.gometro.base.providers.CoroutineContextProvider
-import com.gometro.buildconfig.GometroBuildConfig
+import com.gometro.base.featurecontracts.CoroutineContextProvider
+import com.gometro.buildconfig.AppBuildConfig
 import com.gometro.core.di.PlatformDependencyFactory
-import com.gometro.database.GometroAppDatabase
-import com.gometro.logger.GometroLog
-import com.gometro.logger.GometroLogger
+import com.gometro.database.AppDatabase
+import com.gometro.logger.AppLog
+import com.gometro.logger.AppLogger
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
@@ -20,8 +20,8 @@ abstract class ApplicationInitManager(
 //    private val chaloTimeRefreshManagerUseCase: ChaloTimeRefreshManagerUseCase,
 //    private val fetchAndUpdateMetaDataPropsUseCase: FetchAndUpdateMetaDataPropsUseCase,
     private val platformDependencyFactory: PlatformDependencyFactory,
-    protected val gometroBuildConfig: GometroBuildConfig,
-    private val chaloCoreDatabase: GometroAppDatabase,
+    protected val appBuildConfig: AppBuildConfig,
+    private val chaloCoreDatabase: AppDatabase,
 //    private val encryptionFeature: EncryptionFeature,
 //    private val walletSyncHelper: WalletSyncHelper,
 //    private val walletDao: WalletDao,
@@ -61,10 +61,10 @@ abstract class ApplicationInitManager(
      */
     abstract fun platformPostInit()
 
-    protected fun registerGometroLogger(logger: GometroLogger) {
-        GometroLog.register(
+    protected fun registerGometroLogger(logger: AppLogger) {
+        AppLog.register(
             logger = logger,
-            isDebugBuild = gometroBuildConfig.isDebugBuild
+            isDebugBuild = appBuildConfig.isDebugBuild
         )
     }
 

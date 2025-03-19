@@ -1,16 +1,16 @@
 package com.gometro.core.init
 
-import com.gometro.base.providers.CoroutineContextProvider
-import com.gometro.buildconfig.GometroBuildConfig
+import com.gometro.base.featurecontracts.CoroutineContextProvider
+import com.gometro.buildconfig.AppBuildConfig
 import com.gometro.core.di.PlatformDependencyFactory
-import com.gometro.database.GometroAppDatabase
-import com.gometro.network.utils.GometroLoggerAndroid
+import com.gometro.database.AppDatabase
+import com.gometro.core.androidutils.AppLoggerAndroid
 
 class ApplicationInitManagerAndroid(
     coroutineContextProvider: CoroutineContextProvider,
     platformDependencyFactory: PlatformDependencyFactory,
-    gometroAppDatabase: GometroAppDatabase,
-    gometroBuildConfig: GometroBuildConfig
+    appDatabase: AppDatabase,
+    appBuildConfig: AppBuildConfig
 ): ApplicationInitManager(
 
     coroutineContextProvider = coroutineContextProvider,
@@ -20,12 +20,12 @@ class ApplicationInitManagerAndroid(
 //    private val validateChaloTimeCacheUseCase: ValidateChaloTimeCacheUseCase,
 //    private val chaloTimeRefreshManagerUseCase: ChaloTimeRefreshManagerUseCase,
 //    private val fetchAndUpdateMetaDataPropsUseCase: FetchAndUpdateMetaDataPropsUseCase,
-    gometroBuildConfig = gometroBuildConfig,
+    appBuildConfig = appBuildConfig,
     platformDependencyFactory = platformDependencyFactory,
-    chaloCoreDatabase = gometroAppDatabase,
+    chaloCoreDatabase = appDatabase,
 ) {
     override fun platformPreInit() {
-        registerGometroLogger(logger = GometroLoggerAndroid())
+        registerGometroLogger(logger = AppLoggerAndroid())
     }
 
     override fun platformPostInit() {}

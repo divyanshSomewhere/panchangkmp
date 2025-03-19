@@ -1,15 +1,15 @@
 package com.gometro.homescreen.presentation
 
-import com.gometro.base.GometroMviViewModel
-import com.gometro.base.providers.CoroutineContextProvider
+import com.gometro.base.BaseMviViewModel
+import com.gometro.base.featurecontracts.CoroutineContextProvider
 import com.gometro.core.presentation.UiText
-import com.gometro.logger.GometroLogger
+import com.gometro.logger.AppLogger
 import kotlinx.coroutines.delay
 
 class HomeScreenViewModel(
     private val coroutineContextProvider: CoroutineContextProvider,
-    private val gometroLogger: GometroLogger
-): GometroMviViewModel<HomeScreenAction, HomeScreenDataState, HomeScreenUIState, HomeScreenSideEffect>(
+    private val appLogger: AppLogger
+): BaseMviViewModel<HomeScreenAction, HomeScreenDataState, HomeScreenUIState, HomeScreenSideEffect>(
 ) {
     init {
         initializeCoroutineScopeWhileVsCollected()
@@ -17,7 +17,7 @@ class HomeScreenViewModel(
     }
 
     fun onAction(action: HomeScreenAction) {
-        gometroLogger.debug(tag = "HomeScreenAction", message = action.toString())
+        appLogger.debug(tag = "HomeScreenAction", message = action.toString())
         when(action) {
             HomeScreenAction.OnPassengerCountDecreased -> {
                 handlePassengerCountDecreased()
@@ -33,22 +33,22 @@ class HomeScreenViewModel(
             is HomeScreenAction.OnSearchTypeSelected -> TODO()
             is HomeScreenAction.OnStationSelected -> TODO()
             HomeScreenAction.OnScreenOpened -> {
-                gometroLogger.debug(tag = "HomeScreenAction", message =" here1")
+                appLogger.debug(tag = "HomeScreenAction", message =" here1")
 
-                launchInScopeWithViewLifecycle(coroutineContext = coroutineContextProvider.main) {                gometroLogger.debug(tag = "HomeScreenAction", message =" here1")
-                    gometroLogger.debug(tag = "HomeScreenAction", message =" here2")
+                launchInScopeWithViewLifecycle(coroutineContext = coroutineContextProvider.main) {                appLogger.debug(tag = "HomeScreenAction", message =" here1")
+                    appLogger.debug(tag = "HomeScreenAction", message =" here2")
 
 
                     delay(3000)
-                    gometroLogger.debug(tag = "HomeScreenAction", message =" here3")
+                    appLogger.debug(tag = "HomeScreenAction", message =" here3")
 
                     updateState {
                         it.copy(
                             testCopy = "Updated test copy"
                         )
                     }
-                    gometroLogger.debug(tag = "HomeScreenAction", message =" here4")
-                    gometroLogger.debug(tag = "HomeScreenAction", message =" state = "+dataState.value.testCopy)
+                    appLogger.debug(tag = "HomeScreenAction", message =" here4")
+                    appLogger.debug(tag = "HomeScreenAction", message =" state = "+dataState.value.testCopy)
 
                 }
             }
@@ -102,7 +102,7 @@ class HomeScreenViewModel(
     }
 
     override suspend fun convertToUiState(dataState: HomeScreenDataState): HomeScreenUIState {
-        gometroLogger.debug(tag = "HomeScreenAction", message =" here 6 state = "+dataState.testCopy)
+        appLogger.debug(tag = "HomeScreenAction", message =" here 6 state = "+dataState.testCopy)
 
         return HomeScreenUIState(
             testCopy = UiText.DynamicString(dataState.testCopy),

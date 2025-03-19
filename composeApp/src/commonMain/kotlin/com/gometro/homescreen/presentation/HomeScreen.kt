@@ -13,10 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.gometro.kmpapp.NavDestination
-import com.gometro.kmpapp.screens.list.ListViewModel
-import com.gometro.logger.GometroLogger
-import org.koin.compose.getKoin
+import com.gometro.logger.AppLogger
 import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -25,10 +22,10 @@ fun HomeScreenRoot() {
 
     val viewModel = koinViewModel<HomeScreenViewModel>()
 
-    val gometroLogger = koinInject<GometroLogger>()
+    val appLogger = koinInject<AppLogger>()
 
     val state by viewModel.viewState.collectAsStateWithLifecycle()
-    gometroLogger.debug("observing state = ", "state = ${state.testCopy}")
+    appLogger.debug("observing state = ", "state = ${state.testCopy}")
     HomeScreen(state)
     viewModel.onAction(HomeScreenAction.OnScreenOpened)
 

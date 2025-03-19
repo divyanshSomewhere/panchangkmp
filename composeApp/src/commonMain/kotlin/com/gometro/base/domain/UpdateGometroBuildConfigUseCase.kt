@@ -5,11 +5,11 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.gometro.buildconfig.Environment
-import com.gometro.buildconfig.GometroBuildConfig
+import com.gometro.buildconfig.AppBuildConfig
 
 class UpdateGometroBuildConfigUseCase(
     private val envChangeStore: DataStore<Preferences>,
-    private val chaloBuildConfig: GometroBuildConfig
+    private val chaloBuildConfig: AppBuildConfig
 ) {
 
     suspend fun invoke(env: Environment) {
